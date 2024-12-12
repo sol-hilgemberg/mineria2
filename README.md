@@ -42,7 +42,7 @@ environmental_data.to_csv("environmental_data.csv", index=False)
 
 #Visualización
 #Visualiza las distribuciones de las métricas ambientales utilizando matplotlib y seaborn:
-python
+#python
 plt.figure(figsize=(15, 5))
 for i, column in enumerate(["co2_emissions", "water_usage", "waste_generated"], 1):
     plt.subplot(1, 3, i)
@@ -54,17 +54,18 @@ plt.show()
 
 #Modelos de Predicción
 #Entrena modelos de Random Forest para predecir cada una de las métricas:
+#python
 
-python
 for column in y.columns:
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train[column])
     predictions[column] = model.predict(X_test)
     print(f"{column} - Error cuadrático medio:", mean_squared_error(y_test[column], predictions[column]))
-Monitoreo en Tiempo Real
-Genera alertas en tiempo real basadas en umbrales predeterminados:
 
-python
+#Monitoreo en Tiempo Real
+#Genera alertas en tiempo real basadas en umbrales predeterminados:
+
+#python
 def real_time_monitoring(data):
     for _, row in data.iterrows():
         alerts = check_alerts(row)
@@ -72,10 +73,10 @@ def real_time_monitoring(data):
             for alert in alerts:
                 print(alert)
         time.sleep(0.5)  # Simula un intervalo de tiempo
+
 #Simulación de Estrategias de Reducción
 #Simula escenarios con estrategias para reducir el impacto ambiental:
-
-python
+#python
 def simulate_scenarios(data, scenarios):
     results = {}
     for scenario, changes in scenarios.items():
