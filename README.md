@@ -85,11 +85,4 @@ def simulate_scenarios(data, scenarios):
             simulated_data[metric] *= (1 + change / 100)
         results[scenario] = simulated_data
     return results
-#Contribuciones
-#Las contribuciones son bienvenidas. Siéntete libre de abrir un pull request o reportar problemas.
 
-Licencia
-Este proyecto está licenciado bajo los términos de la MIT License.
-
-
-Puedes adaptar este README según tus necesidades y añadir cualquier información adicional que consideres relevante. ¡Espero que te sea útil! 😊
